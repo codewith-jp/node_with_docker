@@ -1,4 +1,4 @@
-# mainly node related config
+# mainly node related 
 FROM node:latest
 WORKDIR /app
 COPY . /app
