@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'docker --version'
+                sh 'docker version'
                 // sh 'svn --version'
             }
         }
