@@ -1,4 +1,3 @@
-# mainly node related 
 FROM node:latest
 WORKDIR /app
 COPY . /app
