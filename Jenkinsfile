@@ -25,7 +25,9 @@ pipeline {
             }
         }
         stage('Deploy') {
-
+                  steps {
+                 echo 'Empty'
+            }
         }
     }
 }
