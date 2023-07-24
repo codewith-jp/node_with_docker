@@ -1,12 +1,31 @@
 pipeline {
-    agent {
-        docker { image 'node:18.16.0-alpine' }
+    agent any
+    options {
+        skipStagesAfterUnstable()
     }
     stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
+         stage('Clone repository') { 
+            steps { 
+                script{
+                checkout scm
+                }
             }
+        }
+
+        stage('Build') { 
+            steps { 
+                script{
+                 app = docker.build("underwater")
+                }
+            }
+        }
+        stage('Test'){
+            steps {
+                 echo 'Empty'
+            }
+        }
+        stage('Deploy') {
+
         }
     }
 }
