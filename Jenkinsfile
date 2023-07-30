@@ -28,8 +28,10 @@ pipeline {
                   steps {
                     script{
                         docker.withRegistry("https://890071746419.dkr.ecr.eu-central-1.amazonaws.com/elecrweb",'ecr:eu-central-1:MYQ_AWS') {
-                        app.push("${env.BUILD_NUMBER}")
-                        app.push("latest")
+                        
+                            app = docker.build("my-image:${env.BUILD_ID}")
+                            app.push()
+                            // app.push("latest")
                         }
                     }
             }
